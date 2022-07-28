@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Cardenas1850/Employee-Tracker#readme",
   "dependencies": {
-    "inquirer": "^9.0.2"
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
   }
 }

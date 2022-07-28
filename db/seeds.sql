@@ -7,7 +7,7 @@ VALUES  ("Kitchen Staff"),
 INSERT INTO roles (title, salary, department_id)
 VALUES  ("Head Chef", 75000.00, 1),
         ("Sous Chef", 68000.00, 1),
-        ("Line Cook", 60000.00, 1),
+        ("Supa Chef", 60000.00, 1),
         ("Dishwasher", 45000.00,1),
         ("Server", 55000.00, 2),
         ("Hostess/Host", 50000.00, 2),
