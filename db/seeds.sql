@@ -12,7 +12,7 @@ VALUES  ("Head Chef", 75000.00, 1),
         ("Server", 55000.00, 2),
         ("Hostess/Host", 50000.00, 2),
         ("Head of Marketing and Sales", 80000.00, 3),
-        ("Owner and Operator", 150000.00, 4),
+        ("Owner and Operator", 150000.00, 4);
 
 INSERT INTO employees (first_name, last_name, role_id)
 VALUES  ("Jason", "Cardenas", 1), 

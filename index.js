@@ -59,7 +59,7 @@ async function answerPusher(answer) {
         }
 
         case "Add employee": {
-            await createNewDepartment();
+            await createNewEmployee();
             await menuChoices();
             break;
         }
@@ -93,7 +93,7 @@ async function viewAllDepartments() {
     console.table(departments);
 };
 
-async function createEmployee() {
+async function createNewEmployee() {
     const db = new Database(connection);
     const allEmployees = await db.viewAllEmployees();
     const employeeNames = allEmployees.map(employee => {
@@ -131,13 +131,18 @@ async function createEmployee() {
         {
             type: "list",
             message: 'Who is the manager?',
+            choices: employeeNames,
             name: "manager_id"
-        }]);
+        }])
+        .then(employee => {
+            console.log(employee);
+            db.createNewEmployee(employee);
+        });
 };
 
 async function createNewRole() {
     const db = new Database(connection);
-    const viewAllDepartments = await db.viewAllDepartments();
+    const allDepartments = await db.viewAllDepartments();
     const departmentNames = allDepartments.map(department => {
         return {
             name: department.name,
@@ -159,6 +164,7 @@ async function createNewRole() {
         {
             type: 'list',
             message: 'What department does this role fall under?',
+            choices: departmentNames,
             name: "department_id"
         }])
         .then(role => {
